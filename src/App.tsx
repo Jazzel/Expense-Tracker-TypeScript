@@ -11,8 +11,8 @@ import { AddTransaction } from "./components/AddTransaction";
 function App() {
   return (
     <AppProvider>
-      <Header />
       <div className="container">
+        <Header />
         <Balance />
         <IncomeExpenses />
         <TransactionList />

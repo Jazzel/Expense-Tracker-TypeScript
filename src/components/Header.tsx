@@ -1,5 +1,5 @@
 import React from "react";
 
 export const Header: React.FC = () => {
-  return <h2>Expense Tracker</h2>;
+  return <h1 style={{ textAlign: "center" }}>Expense Tracker</h1>;
 };

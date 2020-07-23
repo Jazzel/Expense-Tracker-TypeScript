@@ -17,7 +17,7 @@ export const AddTransaction: React.FC = () => {
 
   const onSubmit = (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
-   
+
     dispatch({
       type: Types.Add,
       payload: {
@@ -44,6 +44,7 @@ export const AddTransaction: React.FC = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Enter text..."
+            required
           />
         </div>
         <div className="htmlForm-control">
@@ -58,26 +59,29 @@ export const AddTransaction: React.FC = () => {
         <div className="htmlForm-control">
           <label htmlFor="amount">
             Amount <br />
-            (negative - expense, positive - income)
           </label>
-          <select
-            value={transType}
-            onChange={(e) => setTransType(e.target.value)}
-          >
-            <option value={TransactionType.Expense}>
-              {TransactionType.Expense}
-            </option>
-            <option value={TransactionType.Income}>
-              {TransactionType.Income}
-            </option>
-          </select>
-          <input
-            type="number"
-            value={amount}
-            onChange={(e) => setAmount(parseInt(e.target.value))}
-            placeholder="Enter amount..."
-          />
+          <div>
+            <select
+              value={transType}
+              onChange={(e) => setTransType(e.target.value)}
+            >
+              <option value={TransactionType.Expense}>
+                Expense
+              </option>
+              <option value={TransactionType.Income}>
+                Income
+              </option>
+            </select>
+            <input
+              type="number"
+              value={amount}
+              onChange={(e) => setAmount(parseInt(e.target.value))}
+              placeholder="Enter amount..."
+              required
+            />
+          </div>
         </div>
+        <br/>
         <button className="btn">Add transaction</button>
       </form>
     </>

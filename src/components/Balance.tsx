@@ -25,11 +25,10 @@ export const Balance: React.FC = () => {
       : "+";
 
   return (
-    <>
-      <h4>Your Balance</h4>
-      <h1>
+    <div style={{ textAlign: "center" }}>
+      <h2>Current Balance: &nbsp;
         {sign}${total}.00
-      </h1>
-    </>
+      </h2>
+    </div>
   );
 };
