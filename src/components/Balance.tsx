@@ -7,12 +7,12 @@ export const Balance: React.FC = () => {
   } = useContext(AppContext);
 
   const income = transactions
-    .filter((transactions) => transactions.type === "inc")
-    .reduce((acc, item) => (acc += item.amount), 0)
+    .filter((transactions:any) => transactions.type === "inc")
+    .reduce((acc:any, item:any) => (acc += item.amount), 0)
     .toFixed(2);
   const expense = transactions
-    .filter((transactions) => transactions.type === "exp")
-    .reduce((acc, item) => (acc += item.amount), 0)
+    .filter((transactions:any) => transactions.type === "exp")
+    .reduce((acc:any, item:any) => (acc += item.amount), 0)
     .toFixed(2);
   const total = Math.abs(parseFloat(income) - parseFloat(expense));
   const sign =

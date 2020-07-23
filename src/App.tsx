@@ -15,8 +15,12 @@ function App() {
         <Header />
         <Balance />
         <IncomeExpenses />
-        <TransactionList />
-        <AddTransaction />
+        <div className="transactions">
+          <div className="transactions-sub">
+            <TransactionList />
+            <AddTransaction />
+          </div>
+        </div>
       </div>
     </AppProvider>
   );

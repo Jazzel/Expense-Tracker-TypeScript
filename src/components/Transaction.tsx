@@ -13,7 +13,12 @@ export const Transaction: React.FC<Props> = ({ transaction }) => {
 
   return (
     <li className={transaction.type === "exp" ? "minus" : "plus"}>
-      {transaction.name} {transaction.description}{" "}
+      <span>
+        <span style={{ fontWeight: "bolder", textTransform: "uppercase" }}>
+          {transaction.name}
+        </span>
+        {transaction.description ? `:  ${transaction.description}` : null}
+      </span>
       <span>
         {sign}${Math.abs(transaction.amount)}
       </span>

@@ -6,14 +6,13 @@ export const IncomeExpenses: React.FC = () => {
     state: { transactions },
   } = useContext(AppContext);
 
-  const transaction = transactions.map((transaction) => transaction);
   const income = transactions
-    .filter((transactions) => transactions.type === "inc")
-    .reduce((acc, item) => (acc += item.amount), 0)
+    .filter((transactions:any) => transactions.type === "inc")
+    .reduce((acc:any, item:any) => (acc += item.amount), 0)
     .toFixed(2);
-  const expense = transaction
-    .filter((transactions) => transactions.type === "exp")
-    .reduce((acc, item) => (acc += item.amount), 0)
+  const expense = transactions
+    .filter((transactions:any) => transactions.type === "exp")
+    .reduce((acc:any, item:any) => (acc += item.amount), 0)
     .toFixed(2);
 
   return (

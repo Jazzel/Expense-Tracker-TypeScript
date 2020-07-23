@@ -36,7 +36,7 @@ export const AddTransaction: React.FC = () => {
   return (
     <>
       <h3>Add new transaction</h3>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className="transaction-form">
         <div className="htmlForm-control">
           <label htmlFor="text">Text</label>
           <input

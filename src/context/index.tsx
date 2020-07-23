@@ -1,14 +1,26 @@
 import React, { createContext, useReducer } from "react";
 import { expenseReducer } from "./reducers";
 
-
 // Initial state
 type InitialStateType = {
   transactions: Transaction[];
 };
+enum TransactionType {
+  Expense = "exp",
+  Income = "inc",
+}
+
 
 const initialState = {
-  transactions: [],
+  transactions: [
+    {
+      id: 1,
+      name: "test",
+      amount: 3123,
+      description: "test",
+      type: TransactionType.Expense
+    },
+  ],
 };
 
 // Create Context
@@ -17,7 +29,7 @@ const AppContext = createContext<{
   dispatch: React.Dispatch<any>;
 }>({ state: initialState, dispatch: () => null });
 
-const mainReducer = ({ transactions }:any, action: any) => ({
+const mainReducer = ({ transactions }: any, action: any) => ({
   transactions: expenseReducer(transactions, action),
 });
 
