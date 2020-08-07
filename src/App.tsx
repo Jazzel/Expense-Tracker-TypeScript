@@ -7,13 +7,13 @@ import { Balance } from "./components/Balance";
 import { IncomeExpenses } from "./components/IncomeExpenses";
 import { TransactionList } from "./components/TransactionList";
 import { AddTransaction } from "./components/AddTransaction";
-import { sendPushNotification } from "./PushNotification";
+import { sendPushNotification } from "./PushNotifications";
 
 function App() {
   useEffect(() => {
     setTimeout(() => {
       sendPushNotification("Welcome User !!");
-    }, 3000);
+    }, 2000);
   }, []);
   return (
     <AppProvider>

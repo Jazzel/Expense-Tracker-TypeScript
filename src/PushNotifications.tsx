@@ -16,7 +16,7 @@ export const sendPushNotification = async (message: string) => {
           "https://fcm.googleapis.com/fcm/send",
           {
             notification: {
-              title: "Expense Tracker",
+              title: "Expense Tracker by Jazzel Mehmood",
               body: `${message}`,
               icon: "logo.png",
               click_action: `/`,
@@ -32,7 +32,7 @@ export const sendPushNotification = async (message: string) => {
           }
         )
         .then((response) => {
-          console.log("response" + response);
+          console.log(response);
         })
         .catch((error) => {
           console.log(error);

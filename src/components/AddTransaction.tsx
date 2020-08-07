@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { AppContext } from "../context";
 import { Types } from "../context/reducers";
-import { sendPushNotification } from "./../PushNotification";
+import { sendPushNotification } from "./../PushNotifications";
 
 enum TransactionType {
   Expense = "exp",
