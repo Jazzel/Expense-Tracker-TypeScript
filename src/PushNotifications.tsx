@@ -18,7 +18,7 @@ export const sendPushNotification = async (message: string) => {
             notification: {
               title: "Expense Tracker by Jazzel Mehmood",
               body: `${message}`,
-              icon: "logo.png",
+              icon: "https://mjm-expensetracker.netlify.app/images/logo.png",
               click_action: `/`,
             },
             to: token,
