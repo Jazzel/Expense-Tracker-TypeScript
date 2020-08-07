@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { AppContext } from "../context";
 import { Types } from "../context/reducers";
+import { sendPushNotification } from "./../PushNotification";
 
 enum TransactionType {
   Expense = "exp",
@@ -28,6 +29,10 @@ export const AddTransaction: React.FC = () => {
         type: transType || "exp",
       },
     });
+    setTimeout(() => {
+      if (transType === "inc") sendPushNotification("Income added !!");
+      else sendPushNotification("Expense added !!");
+    }, 3000);
     setName("");
     setDescription("");
     setAmount(0);
@@ -65,12 +70,8 @@ export const AddTransaction: React.FC = () => {
               value={transType}
               onChange={(e) => setTransType(e.target.value)}
             >
-              <option value={TransactionType.Expense}>
-                Expense
-              </option>
-              <option value={TransactionType.Income}>
-                Income
-              </option>
+              <option value={TransactionType.Expense}>Expense</option>
+              <option value={TransactionType.Income}>Income</option>
             </select>
             <input
               type="number"
@@ -81,7 +82,7 @@ export const AddTransaction: React.FC = () => {
             />
           </div>
         </div>
-        <br/>
+        <br />
         <button className="btn">Add transaction</button>
       </form>
     </>

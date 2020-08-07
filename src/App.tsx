@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 
 import { AppProvider } from "./context";
@@ -7,8 +7,14 @@ import { Balance } from "./components/Balance";
 import { IncomeExpenses } from "./components/IncomeExpenses";
 import { TransactionList } from "./components/TransactionList";
 import { AddTransaction } from "./components/AddTransaction";
+import { sendPushNotification } from "./PushNotification";
 
 function App() {
+  useEffect(() => {
+    setTimeout(() => {
+      sendPushNotification("Welcome User !!");
+    }, 3000);
+  }, []);
   return (
     <AppProvider>
       <div className="container">
